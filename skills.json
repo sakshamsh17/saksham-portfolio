@@ -21,19 +21,19 @@
     },
     {
         "name": "AWS SNS",
-        "icon": "https://icon.icepanel.io/AWS/svg/App-Integration/Simple-Notification-Service.svg"
+        "icon": "https://img.icons8.com/color/48/000000/amazon-web-services.png"
     },
     {
         "name": "Docker",
         "icon": "https://img.icons8.com/color/48/000000/docker.png"
     },
     {
-        "name": "GitHub Actions",
-        "icon": "https://img.icons8.com/ios-filled/48/000000/github-actions.png"
+        "name": "GitHubActions",
+        "icon": "https://img.icons8.com/color/48/000000/git.png"
     },
     {
         "name": "REST API",
-        "icon": "https://img.icons8.com/material-outlined/24/api-settings.png"
+        "icon": "https://img.icons8.com/color/48/api-settings.png"
     },
     {
         "name": "MongoDB",
@@ -73,7 +73,7 @@
     },
     {
         "name": "Postman",
-        "icon": "https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-postman-is-the-only-complete-api-development-environment-logo-color-tal-revivo.png"
+        "icon": "https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/external-postman-is-the-only-complete-api-development-environment-logo-shadow-tal-revivo.png"
     },
     {
         "name": "Linux",
