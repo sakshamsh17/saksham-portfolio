@@ -38,19 +38,28 @@ $(document).ready(function () {
     });
 
     // <!-- emailjs to mail contact form data -->
-    $("#contact-form").submit(function (event) {
-        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+    // Initialize EmailJS with your public key
+    emailjs.init("urYu9-lFtmAy6KWcn");
 
-        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+    $("#contact-form").submit(function (event) {
+        event.preventDefault();
+
+        // Show loading state
+        const submitBtn = $(this).find('button[type="submit"]');
+        const originalText = submitBtn.html();
+        submitBtn.prop('disabled', true).html('Sending...');
+
+        emailjs.sendForm('service_1wtw0mj', 'template_xmziaej', '#contact-form')
             .then(function (response) {
                 console.log('SUCCESS!', response.status, response.text);
                 document.getElementById("contact-form").reset();
-                alert("Form Submitted Successfully");
+                alert("Form Submitted Successfully! I'll get back to you soon.");
+                submitBtn.prop('disabled', false).html(originalText);
             }, function (error) {
                 console.log('FAILED...', error);
-                alert("Form Submission Failed! Try Again");
+                alert("Form Submission Failed! Please try again or email me directly.");
+                submitBtn.prop('disabled', false).html(originalText);
             });
-        event.preventDefault();
     });
     // <!-- emailjs to mail contact form data -->
 
