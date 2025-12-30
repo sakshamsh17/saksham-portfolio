@@ -171,13 +171,25 @@ VanillaTilt.init(document.querySelectorAll(".tilt"), {
 
 
 // pre loader start
-// function loader() {
-//     document.querySelector('.loader-container').classList.add('fade-out');
-// }
-// function fadeOut() {
-//     setInterval(loader, 500);
-// }
-// window.onload = fadeOut;
+(function () {
+    const PRELOADER_DELAY_MS = 1500; // adjust this value (milliseconds) as needed
+
+    function hidePreloader() {
+        const el = document.getElementById('preloader') || document.querySelector('.loader-container');
+        if (!el) return;
+        el.classList.add('fade-out');
+        // remove element after fade animation (keeps DOM clean)
+        setTimeout(() => {
+            if (el && el.parentNode) el.parentNode.removeChild(el);
+        }, 600);
+    }
+
+    if (document.readyState === 'complete') {
+        setTimeout(hidePreloader, PRELOADER_DELAY_MS);
+    } else {
+        window.addEventListener('load', () => setTimeout(hidePreloader, PRELOADER_DELAY_MS));
+    }
+})();
 // pre loader end
 
 // disable developer mode
